@@ -1,0 +1,95 @@
+*{
+	margin:0;
+	padding:0;
+}
+html{
+	height:100%;
+}
+body{
+	width:1024px;
+	height:100%;
+	margin:auto;
+	background:#404040;
+}
+a{
+	text-decoration:none;
+	color: #888888;
+}
+#container{
+}
+#header{
+	background:#BDBDBD;
+	height:125px;
+}
+#logo{
+	float:left;
+	width:150px;
+}
+#logo img{
+	width:150px;
+	height:125px;
+	overflow:auto;
+}
+#siteTitle {
+	float:left;
+	position:relative;
+	padding-top:40px;
+	padding-left:100px;
+}
+#login{
+	float:right;
+	position:relative;
+}
+#navigation{
+	margin-top:5px;
+	text-align:center;
+	font-size: 20px;
+ }
+#navigation li{
+	list-style-type:none;
+	display:inline;
+}
+#navigation a{
+	margin-left:10px;
+	margin-right:10px;
+}
+#navigation a:link {}
+#navigation a:visited {}
+#navigation a:hover {
+}
+#content{
+	margin-top:5px;
+}
+#subnav{
+	float:left;
+	width:160px;
+}
+#subnavl{
+	clear:both;
+	overflow:scroll;
+}
+#content li{
+	margin-left:40px;
+}
+#gallery{
+	float:right;
+	width:850px;
+}
+#gallery img{
+	width:19.5%;
+	height:150px;
+	overflow:auto;
+}
+#footer{
+	clear:both;
+	height:25px;
+	text-align:center;
+	margin-top:5px;
+	font-size: 15px;
+}
+#footer a:link {}
+#footer a:visited {}
+#footer a:hover {}
+
+.loadmore{
+}
