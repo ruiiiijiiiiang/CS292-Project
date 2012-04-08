@@ -58,13 +58,17 @@ $(document).ready(function() {
     $("#TOU_content").hide();
   });
   
-  $("#toTOM").click(function() {
+  $("#toTOU").click(function() {
     $("#home_content").hide();
     $("#tourguide_content").hide();
     $("#plantseed_content").hide();
     $("#forest_content").hide();
     $("#contactus_content").hide();
     $("#TOU_content").show();
+  });
+
+  $("#search").autocomplete({
+    source: tags
   });
 });
 

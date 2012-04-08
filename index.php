@@ -18,11 +18,20 @@ include ("navigation.php");
 ?>
   <div id="forest_content">
     <div id="subnav">
-      <form>
-        <input type="text" name="search"/>
-        <input type="submit" value="Search" />
-      </form>
-      <div id="subnav2">
+        <?php
+	  $db = mysql_connect("localhost", "root","");
+	  mysql_select_db("forest", $db);
+	  $result = mysql_query("SELECT Name from forest ORDER BY Name");
+	  while ($row[] = mysql_fetch_array($result));
+        ?>
+        <script>
+          var tags = ["<?php echo join("\", \"", $row); ?>"];
+        </script>
+	<form>
+	  <input id="search" type="text" name="search"/>
+	  <input type="submit" value="Search" />
+	</form>
+	<div id="subnav2">
         <?php
           $db = mysql_connect("localhost", "root","");
           mysql_select_db("forest", $db);
@@ -51,7 +60,7 @@ include ("navigation.php");
   </div>
   <div id="tourguide_content">
     <div class="accordion">
-      <h2>1. Getting Started</h2>
+      <h3><a href="#">1. Getting Started</a></h3>
       <div>
         <ol>
           <li>Enter valid E-mail</li>
@@ -60,7 +69,7 @@ include ("navigation.php");
           <li>Login with password</li>
         </ol>
       </div>
-        <h2>2. Go on an Adventure</h2>
+        <h3><a href="#">2. Go on an Adventure</a></h3>
       <div>
         <ol>
           <li>Click "The Forest"</li>
