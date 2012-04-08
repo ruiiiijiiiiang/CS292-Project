@@ -14,8 +14,8 @@ include ("header.php");
 include ("navigation.php");
 ?>
     <div id="content">
-		<h2>Contact Us</h2>
-	</div>
+      <h2>Contact Us</h2>
+    </div>
 </div>
 <?php
 include ("footer.php");

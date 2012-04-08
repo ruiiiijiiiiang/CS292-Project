@@ -17,34 +17,34 @@ include ("header.php");
 include ("navigation.php");
 ?>
   <div id="forest_content">
-	<div id="subnav">
-		 <form>
-			<input type="text" name="search"/>
-			<input type="submit" value="Search" />
-		</form>
-		<div id="subnav2">
-			<?php
-				$db = mysql_connect("localhost", "root","");
-				mysql_select_db("forest", $db);
-				$result = mysql_query("SELECT Name from forest ORDER BY Name");
-				while ($row = mysql_fetch_array($result)) {
-					echo '<p>' . $row['Name'] . '</p>';
-				}
-				mysql_close($db);
-			?>
-		</div>
-	</div>
-	<div id="gallery">
-		<?php
-			$db = mysql_connect("localhost", "root","");
-			mysql_select_db("forest", $db);
-			$result = mysql_query("SELECT Image from forest ORDER BY ID LIMIT 15");
-			while ($row = mysql_fetch_array($result)) {
-				echo '<img src=' . $row['Image'] . ' alt="Tree picture" />';
-			}
-			mysql_close($db);
-		?>
-	</div>
+    <div id="subnav">
+      <form>
+        <input type="text" name="search"/>
+        <input type="submit" value="Search" />
+      </form>
+    <div id="subnav2">
+      <?php
+        $db = mysql_connect("localhost", "root","");
+        mysql_select_db("forest", $db);
+        $result = mysql_query("SELECT Name from forest ORDER BY Name");
+        while ($row = mysql_fetch_array($result)) {
+          echo '<p>' . $row['Name'] . '</p>';
+        }
+        mysql_close($db);
+      ?>
+    </div>
+  </div>
+  <div id="gallery">
+    <?php
+      $db = mysql_connect("localhost", "root","");
+      mysql_select_db("forest", $db);
+      $result = mysql_query("SELECT Image from forest ORDER BY ID LIMIT 15");
+      while ($row = mysql_fetch_array($result)) {
+        echo '<img src=' . $row['Image'] . ' alt="Tree picture" />';
+      }
+      mysql_close($db);
+    ?>
+  </div>
   </div>
   <div id="home_content">
       <h2>Home</h2>
@@ -72,16 +72,14 @@ include ("navigation.php");
     </div>
   </div>
   <div id="plantseed_content">
-        <form>
-                        Name: <input type="text" name="Name" /> <br/>
-                        Author: <input type="text" name="Author" /> <br/>
-                        Story: <input type="text" name="Content" /> <br/>
-                        Invite: <input type="text" name="email" /><br/>
-                        <input type="submit" value="Finished!" />
-        </form>
+    <form>
+      Name:   <input type="text" name="Name" /> <br/>
+      Author: <input type="text" name="Author" /> <br/>
+      Story:  <input type="text" name="Content" /> <br/>
+      Invite: <input type="text" name="email" /><br/>
+              <input type="submit" value="Finished!" />
+    </form>
   </div>
-
-
 </div>
 <?php
 include ("footer.php");

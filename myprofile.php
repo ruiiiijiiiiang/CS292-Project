@@ -9,13 +9,13 @@
 <body>
 
 <div id="container">
-<?php
-include ("header.php");
-include ("navigation.php");
-?>
-	<div id="content">
-		<h2>My Profile</h2>
-	</div>
+  <?php
+    include ("header.php");
+    include ("navigation.php");
+  ?>
+  <div id="content">
+    <h2>My Profile</h2>
+  </div>
 </div>
 <?php
 include ("footer.php");
