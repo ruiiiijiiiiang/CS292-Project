@@ -44,7 +44,6 @@ include ("navigation.php");
 			}
 			mysql_close($db);
 		?>
-		<h3><a class="loadmore" href="forestpaginator.php">More...</a></h3>
 	</div>
   </div>
   <div id="home_content">
@@ -54,21 +53,21 @@ include ("navigation.php");
     <div class="accordion">
         <a href="#">1. Getting Started</a>
         <div>
-    <ol>
-      <li>Enter valid E-mail</li>
-      <li>Fill out information </li>
-      <li>Check email for confirmation email</li>
-      <li>Login with password</li>
-    </ol>
+          <ol>
+            <li>Enter valid E-mail</li>
+            <li>Fill out information </li>
+            <li>Check email for confirmation email</li>
+            <li>Login with password</li>
+          </ol>
         </div>
-    <a href="#">2. Go on an Adventure</a>
+        <a href="#">2. Go on an Adventure</a>
         <div>
-    <ol>
-      <li>Click "The Forest"</li>
-      <li>Click on a tree or one of the tree names in the list</li>
-      <li>Read the node</li>
-      <li>Click on an adjacent node to continue the story</li>
-    </ol>
+          <ol>
+            <li>Click "The Forest"</li>
+            <li>Click on a tree or one of the tree names in the list</li>
+            <li>Read the node</li>
+            <li>Click on an adjacent node to continue the story</li>
+          </ol>
         </div>
     </div>
   </div>
