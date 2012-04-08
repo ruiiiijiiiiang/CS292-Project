@@ -35,10 +35,12 @@ a{
 	position:relative;
 	padding-top:40px;
 	padding-left:100px;
+        width:624;
 }
 #login{
-	float:right;
+	float:left;
 	position:relative;
+        width:150px;
 }
 #navigation{
 	margin-top:5px;
@@ -68,7 +70,7 @@ a{
 	clear:both;
 	overflow:scroll;
 }
-#content li{
+#subnav_content li{
 	margin-left:40px;
 }
 #gallery{
