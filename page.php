@@ -12,15 +12,14 @@
 <body>
 
 <div id="container">
-<?php
-include ("header.php");
-include ("navigation.php");
-?>
-	<div id="content">
-		<?php
-			
-		?>
-	</div>
+  <?php
+    include ("header.php");
+    include ("navigation.php");
+  ?>
+  <div id="content">
+    <?php
+    ?>
+  </div>
 </div>
 <?php
 include ("footer.php");

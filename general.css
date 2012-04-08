@@ -60,34 +60,34 @@ a{
 #navigation a:hover {
 }
 #content{
-	margin-top:5px;
+  margin-top:5px;
 }
 #subnav{
-	float:left;
-	width:160px;
+  float:left;
+  width:160px;
 }
 #subnavl{
-	clear:both;
-	overflow:scroll;
+  clear:both;
+  overflow:scroll;
 }
 #subnav_content li{
-	margin-left:40px;
+  margin-left:40px;
 }
 #gallery{
-	float:right;
-	width:850px;
+  float:right;
+  width:850px;
 }
 #gallery img{
-	width:19.5%;
-	height:150px;
-	overflow:auto;
+  width:19.5%;
+  height:150px;
+  overflow:auto;
 }
 #footer{
-	clear:both;
-	height:25px;
-	text-align:center;
-	margin-top:5px;
-	font-size: 15px;
+  clear:both;
+  height:25px;
+  text-align:center;
+  margin-top:5px;
+  font-size: 15px;
 }
 #footer a:link {}
 #footer a:visited {}
