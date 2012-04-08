@@ -16,14 +16,22 @@
 include ("header.php");
 include ("navigation.php");
 ?>
-<div id="content">
   <div id="forest_content">
     <div id="subnav">
-      <form>
-        <input type="text" name="search"/>
-        <input type="submit" value="Search" />
-      </form>
-      <div id="subnav2">
+        <?php
+	  $db = mysql_connect("localhost", "root","");
+	  mysql_select_db("forest", $db);
+	  $result = mysql_query("SELECT Name from forest ORDER BY Name");
+	  while ($row[] = mysql_fetch_array($result));
+        ?>
+        <script>
+          var tags = ["<?php echo join("\", \"", $row); ?>"];
+        </script>
+	<form>
+	  <input id="search" type="text" name="search"/>
+	  <input type="submit" value="Search" />
+	</form>
+	<div id="subnav2">
         <?php
           $db = mysql_connect("localhost", "root","");
           mysql_select_db("forest", $db);
@@ -52,7 +60,7 @@ include ("navigation.php");
   </div>
   <div id="tourguide_content">
     <div class="accordion">
-      <a><h2>1. Getting Started</h2></a>
+      <h3><a href="#">1. Getting Started</a></h3>
       <div>
         <ol>
           <li>Enter valid E-mail</li>
@@ -61,7 +69,7 @@ include ("navigation.php");
           <li>Login with password</li>
         </ol>
       </div>
-      <a><h2>2. Go on an Adventure</h2></a>
+        <h3><a href="#">2. Go on an Adventure</a></h3>
       <div>
         <ol>
           <li>Click "The Forest"</li>
@@ -76,7 +84,7 @@ include ("navigation.php");
     <form id="createnode">
       <h2>Create Node</h2>
         Author: <input type="text" name="Author" /> <br/>
-        Story:  <textarea type="text" name="Content" > </textarea> <br/>
+        Story: <textarea type="text" name="Content" > </textarea> <br/>
                 <input type="submit" value="Finished!" />
     </form>
     <div id="bookmarks">
@@ -85,9 +93,9 @@ include ("navigation.php");
   </div>
   <div id="plantseed_content">
     <form>
-      Story name:   <input type="text" name="Name" /> <br/>
+      Story name: <input type="text" name="Name" /> <br/>
       Author: <input type="text" name="Author" /> <br/>
-      Story:  <textarea type="text" name="Content"></textarea> <br/>
+      Story: <textarea type="text" name="Content"></textarea> <br/>
       Invite: <input type="text" name="email" /><br/>
               <input type="submit" value="Finished!" />
     </form>
@@ -95,16 +103,15 @@ include ("navigation.php");
   <div id="contactus_content">
     <h2>Contact Us</h2>
     <form>
-      Your name:   <input type="text" name="Name" /> <br/>
+      Your name: <input type="text" name="Name" /> <br/>
       Your E-mail: <input type="text" name="Email" /> <br/>
-      Message:  <textarea type="text" name="Message"></textarea> <br/>
+      Message: <textarea type="text" name="Message"></textarea> <br/>
               <input type="submit" value="Send!" />
     </form>
   </div>
   <div id="TOU_content">
     <h2>Terms of Use</h2>
   </div>
-</div>
 </div>
 <?php
 include ("footer.php");
