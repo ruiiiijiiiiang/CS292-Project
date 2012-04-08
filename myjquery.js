@@ -23,4 +23,14 @@ $(document).ready(function() {
 	});
 	return false; // prevent the default action, which is navigating to the link here
   });
+
+  $("#tohome").click(function() {
+    $("#home_content").show();
+    $("#touguide_content").hide();
+    $("#plantseed_content").hide();
+    $("#forest_content").hide();
+  });
+
+
 });
+

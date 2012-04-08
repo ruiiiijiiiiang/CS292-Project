@@ -1,10 +1,10 @@
 <html>
   <div id="navigation">
 	<ul>
-	<li><a href="home.php">Home</a></li>
-    <li><a href="tourguide.php">Tour Guide</a></li>
-    <li><a href="theforest.php">The Forest</a></li>
-    <li><a href="plantseed.php">Plant a Seed</a></li>
+	<li id="tohome"><a href="#">Home</a></li>
+    <li id="totourguide"><a href="#">Tour Guide</a></li>
+    <li id="toforest"><a href="#">The Forest</a></li>
+    <li id="toplantseed"><a href="#">Plant a Seed</a></li>
  <!--    <li><a href="myprofile.php">My Profile</a></li> -->
 	</ul>
   </div>

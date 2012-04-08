@@ -16,7 +16,7 @@
 include ("header.php");
 include ("navigation.php");
 ?>
-  <div id="content">
+  <div id="forest_content">
 	<div id="subnav">
 		 <form>
 			<input type="text" name="search"/>
@@ -47,6 +47,42 @@ include ("navigation.php");
 		<h3><a class="loadmore" href="forestpaginator.php">More...</a></h3>
 	</div>
   </div>
+  <div id="home_content">
+      <h2>Home</h2>
+  </div>
+  <div id="tourguide_content">
+    <div class="accordion">
+        <a href="#">1. Getting Started</a>
+        <div>
+    <ol>
+      <li>Enter valid E-mail</li>
+      <li>Fill out information </li>
+      <li>Check email for confirmation email</li>
+      <li>Login with password</li>
+    </ol>
+        </div>
+    <a href="#">2. Go on an Adventure</a>
+        <div>
+    <ol>
+      <li>Click "The Forest"</li>
+      <li>Click on a tree or one of the tree names in the list</li>
+      <li>Read the node</li>
+      <li>Click on an adjacent node to continue the story</li>
+    </ol>
+        </div>
+    </div>
+  </div>
+  <div id="plantseed_content">
+        <form>
+                        Name: <input type="text" name="Name" /> <br/>
+                        Author: <input type="text" name="Author" /> <br/>
+                        Story: <input type="text" name="Content" /> <br/>
+                        Invite: <input type="text" name="email" /><br/>
+                        <input type="submit" value="Finished!" />
+        </form>
+  </div>
+
+
 </div>
 <?php
 include ("footer.php");
