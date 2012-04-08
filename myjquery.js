@@ -1,12 +1,12 @@
 $(document).ready(function() {
+  // jQuery UI Accordion
+  $(".accordion").accordion();
 
   $("#home_content").show();
   $("#tourguide_content").hide();
   $("#plantseed_content").hide();
   $("#forest_content").hide();
 
-   // jQuery UI Accordion
-  $(".accordion").accordion();
   
    // A global variable to remember the text area currently being edited
   var openText;

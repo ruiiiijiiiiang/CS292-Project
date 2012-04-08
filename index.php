@@ -22,53 +22,53 @@ include ("navigation.php");
         <input type="text" name="search"/>
         <input type="submit" value="Search" />
       </form>
-    <div id="subnav2">
+      <div id="subnav2">
+        <?php
+          $db = mysql_connect("localhost", "root","");
+          mysql_select_db("forest", $db);
+          $result = mysql_query("SELECT Name from forest ORDER BY Name");
+          while ($row = mysql_fetch_array($result)) {
+            echo '<p>' . $row['Name'] . '</p>';
+          }
+          mysql_close($db);
+        ?>
+      </div>
+    </div>
+    <div id="gallery">
       <?php
         $db = mysql_connect("localhost", "root","");
         mysql_select_db("forest", $db);
-        $result = mysql_query("SELECT Name from forest ORDER BY Name");
+        $result = mysql_query("SELECT Image from forest ORDER BY ID LIMIT 15");
         while ($row = mysql_fetch_array($result)) {
-          echo '<p>' . $row['Name'] . '</p>';
+          echo '<img src=' . $row['Image'] . ' alt="Tree picture" />';
         }
         mysql_close($db);
       ?>
     </div>
-  </div>
-  <div id="gallery">
-    <?php
-      $db = mysql_connect("localhost", "root","");
-      mysql_select_db("forest", $db);
-      $result = mysql_query("SELECT Image from forest ORDER BY ID LIMIT 15");
-      while ($row = mysql_fetch_array($result)) {
-        echo '<img src=' . $row['Image'] . ' alt="Tree picture" />';
-      }
-      mysql_close($db);
-    ?>
-  </div>
   </div>
   <div id="home_content">
       <h2>Home</h2>
   </div>
   <div id="tourguide_content">
     <div class="accordion">
-        <a href="#">1. Getting Started</a>
-        <div>
-          <ol>
-            <li>Enter valid E-mail</li>
-            <li>Fill out information </li>
-            <li>Check email for confirmation email</li>
-            <li>Login with password</li>
-          </ol>
-        </div>
-        <a href="#">2. Go on an Adventure</a>
-        <div>
-          <ol>
-            <li>Click "The Forest"</li>
-            <li>Click on a tree or one of the tree names in the list</li>
-            <li>Read the node</li>
-            <li>Click on an adjacent node to continue the story</li>
-          </ol>
-        </div>
+      <h2>1. Getting Started</h2>
+      <div>
+        <ol>
+          <li>Enter valid E-mail</li>
+          <li>Fill out information </li>
+          <li>Check email for confirmation email</li>
+          <li>Login with password</li>
+        </ol>
+      </div>
+        <h2>2. Go on an Adventure</h2>
+      <div>
+        <ol>
+          <li>Click "The Forest"</li>
+          <li>Click on a tree or one of the tree names in the list</li>
+          <li>Read the node</li>
+          <li>Click on an adjacent node to continue the story</li>
+        </ol>
+      </div>
     </div>
   </div>
   <div id="plantseed_content">
