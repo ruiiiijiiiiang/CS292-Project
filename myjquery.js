@@ -6,6 +6,8 @@ $(document).ready(function() {
   $("#tourguide_content").hide();
   $("#plantseed_content").hide();
   $("#forest_content").hide();
+  $("#contactus_content").hide();
+  $("#TOU_content").hide();
 
   
    // A global variable to remember the text area currently being edited
@@ -16,6 +18,8 @@ $(document).ready(function() {
     $("#tourguide_content").hide();
     $("#plantseed_content").hide();
     $("#forest_content").hide();
+    $("#contactus_content").hide();
+    $("#TOU_content").hide();
   });
 
   $("#totourguide").click(function() {
@@ -23,6 +27,8 @@ $(document).ready(function() {
     $("#tourguide_content").show();
     $("#plantseed_content").hide();
     $("#forest_content").hide();
+    $("#contactus_content").hide();
+    $("#TOU_content").hide();
   });
 
   $("#toplantseed").click(function() {
@@ -30,6 +36,8 @@ $(document).ready(function() {
     $("#tourguide_content").hide();
     $("#plantseed_content").show();
     $("#forest_content").hide();
+    $("#contactus_content").hide();
+    $("#TOU_content").hide();
   });
 
   $("#toforest").click(function() {
@@ -37,7 +45,26 @@ $(document).ready(function() {
     $("#tourguide_content").hide();
     $("#plantseed_content").hide();
     $("#forest_content").show();
+    $("#contactus_content").hide();
+    $("#TOU_content").hide();
   });
-
+  
+  $("#tocontactus").click(function() {
+    $("#home_content").hide();
+    $("#tourguide_content").hide();
+    $("#plantseed_content").hide();
+    $("#forest_content").hide();
+    $("#contactus_content").show();
+    $("#TOU_content").hide();
+  });
+  
+  $("#toTOM").click(function() {
+    $("#home_content").hide();
+    $("#tourguide_content").hide();
+    $("#plantseed_content").hide();
+    $("#forest_content").hide();
+    $("#contactus_content").hide();
+    $("#TOU_content").show();
+  });
 });
 

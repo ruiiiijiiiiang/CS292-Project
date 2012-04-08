@@ -80,6 +80,12 @@ include ("navigation.php");
               <input type="submit" value="Finished!" />
     </form>
   </div>
+  <div id="contactus_content">
+    <h2>Contact Us</h2>
+  </div>
+  <div id="TOU_content">
+    <h2>Terms of Use</h2>
+  </div>
 </div>
 <?php
 include ("footer.php");
