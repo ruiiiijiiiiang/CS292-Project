@@ -2,11 +2,11 @@
   <div id="header">
   
   <div id="logo">
-    <img src="http://www.mycorporatelogo.com/blog/wp-content/uploads/2010/07/batman-logo.gif" alt="Batman Logo" />
+    <img src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" alt="Tree Logo" />
   </div>
 
   <div id="siteTitle">
-    <h1>The Site Title Goes Here!</h1>
+    <h1>FicForest</h1>
   </div>
   
   <div id="login">

@@ -6,20 +6,22 @@ html{
 	height:100%;
 }
 body{
-	width:1024px;
-	height:100%;
-	margin:auto;
+  margin:auto;
 	background:#404040;
+  width:1024px;
+  overflow:scroll;
 }
 a{
 	text-decoration:none;
 	color: #888888;
 }
 #container{
+  height:100%;
 }
 #header{
 	background:#BDBDBD;
 	height:125px;
+  width:100%;
 }
 #logo{
 	float:left;
@@ -68,6 +70,20 @@ a{
   clear:both;
   overflow:scroll;
 }
+#createnode{
+  float:left;
+  width:150px;
+  background:red;
+  text-align:center;
+}
+#bookmarks{
+  float:right;
+  width:150px;
+  background:red;
+  text-align:center;
+}
+#tree{
+}
 #tourguide_content li{
 	margin-left:40px;
 }
@@ -80,6 +96,10 @@ a{
   height:150px;
   overflow:auto;
 }
+#seedform{
+   position:relative;
+   margin-left: 300px;
+}
 #footer{
   clear:both;
   height:25px;
@@ -91,5 +111,3 @@ a{
 #footer a:visited {}
 #footer a:hover {}
 
-.loadmore{
-}

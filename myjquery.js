@@ -75,6 +75,8 @@ $(document).ready(function() {
   });
   
   $(".totree").click(function() {
+    //call to other function to generate tree using jquery ui
+    
     $("#home_content").hide();
     $("#tourguide_content").hide();
     $("#plantseed_content").hide();
@@ -88,4 +90,3 @@ $(document).ready(function() {
     source: tags
   });
 });
-
