@@ -30,31 +30,31 @@ include ("navigation.php");
         <input id="search" type="text" name="search"/>
         <input type="submit" value="Search" />
       </form>
-      </div>
-      <div id="subnav2">
+    </div>
+    <div id="subnav2">
+      <?php
+        include ("connect.php");
+        $result = mysql_query("SELECT Name from forest ORDER BY Name");
+        while ($row = mysql_fetch_array($result)) {
+          echo '<a class="totree" href="#">' . $row['Name'] . '</a><br/>';
+        }
+        mysql_close($db);
+      ?>
+    </div>
+    <div id="gallery">
+      <div class="tabpaginator">
         <?php
-          include ("connect.php");
-          $result = mysql_query("SELECT Name from forest ORDER BY Name");
-          while ($row = mysql_fetch_array($result)) {
-            echo '<a class="totree" href="#">' . $row['Name'] . '</a><br/>';
-          }
-          mysql_close($db);
+        $result = mysql_query("SELECT COUNT(*) from forest");
+        $count = mysql_result($result, 0);
+        $page = 1;  $startingfrom = 0;  $recordcount = 5;
+        echo '<ul><li><a href="#">Prev</a></li>';
+        while ($count > $startingfrom) {
+        echo '<li><a href="paginator.php?startingfrom=' . $startingfrom . '&recordcount=' . $recordcount . '">' . $page . '</a></li>';
+          $page ++;  $startingfrom += $recordcount;
+        }
+        echo '<li><a href="#">Next</a></li></ul>';
         ?>
       </div>
-    </div>
-  <div id="gallery">
-    <div class="tabpaginator">
-    <?php
-    $result = mysql_query("SELECT COUNT(*) from forest");
-    $count = mysql_result($result, 0);
-    $page = 1;  $startingfrom = 0;  $recordcount = 5;
-    echo '<ul><li><a href="#">Prev</a></li>';
-    while ($count > $startingfrom) {
-    echo '<li><a href="paginator.php?startingfrom=' . $startingfrom . '&recordcount=' . $recordcount . '">' . $page . '</a></li>';
-      $page ++;  $startingfrom += $recordcount;
-    }
-    echo '<li><a href="#">Next</a></li></ul>';
-    ?>
     </div>
   </div>
   <div id="home_content">
@@ -111,7 +111,7 @@ include ("navigation.php");
   <div id="plantseed_content">
     <h2>Plant a Seed</h2>
     <div id="seedform">
-    <form name="frmPlantSeed" method="post"
+    <form name="frmPlantSeed" method="post">
     <table name="tblPlantSeed" id="tblPlantSeed" BORDER="0" cellpadding="0" cellspacing="0" WIDTH="1000">
       <tr>
         <td width="100"></td>

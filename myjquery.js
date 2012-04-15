@@ -83,7 +83,7 @@ $(document).ready(function() {
   $("#search").autocomplete({
     source: tags
   });
-
+ /*
   // Tab-based paginator
   var $tabs = $(".tabpaginator").tabs({
     load:function() { // Slidedown effect as visual cue to the new content
@@ -110,6 +110,7 @@ $(document).ready(function() {
 	    return true;
 	}
   });
+*/
   // Make the initial landing tab as '1', and disable 'Prev' tab
   $tabs.tabs('select', 1);  $tabs.tabs("disable", 0);  
 });
