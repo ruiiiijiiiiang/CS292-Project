@@ -17,9 +17,7 @@ include ("navigation.php");
   <div id="forest_content">
     <div id="subnav">
       <?php
-        $currID;
-        $db = mysql_connect("localhost", "root","philowarlock68");
-        mysql_select_db("forest", $db);
+        include ("connect.php");        
         $result = mysql_query("SELECT Name from forest ORDER BY Name");
         while ($row[] = mysql_fetch_array($result));
       ?>
@@ -32,8 +30,7 @@ include ("navigation.php");
       </form>
       <div id="subnav2">
         <?php
-          $db = mysql_connect("localhost", "root","philowarlock68");
-          mysql_select_db("forest", $db);
+          include ("connect.php");
           $result = mysql_query("SELECT Name from forest ORDER BY Name");
           while ($row = mysql_fetch_array($result)) {
             echo '<a class="totree" href="#">' . $row['Name'] . '</a><br/>';
@@ -44,8 +41,7 @@ include ("navigation.php");
     </div>
     <div id="gallery">
       <?php
-        $db = mysql_connect("localhost", "root","philowarlock68");
-        mysql_select_db("forest", $db);
+        include ("connect.php");
         $result = mysql_query("SELECT * from forest ORDER BY Updated LIMIT 2");
         while ($row = mysql_fetch_array($result)) {
           echo '<a class="totree" href="#"><img style="margin-left:5px" src=' . $row['Image'] . ' alt="Tree picture" /></a>';
@@ -94,8 +90,7 @@ include ("navigation.php");
     </div>
     <div id="tree">
       <?php
-        $db = mysql_connect("localhost", "root","philowarlock68");
-        mysql_select_db("forest", $db);
+        include ("connect.php");
         $result = mysql_query("SELECT * FROM forest WHERE ID=" . $currID);
         $row = mysql_fetch_array($result);
         echo '<a class="totree" href="#">' . $row['Name'] . '</a>';
