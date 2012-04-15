@@ -43,6 +43,7 @@ a{
 	position:relative;
 }
 #navigation{
+  clear:both;
 	margin-top:5px;
 	text-align:center;
 	font-size: 20px;
@@ -98,16 +99,12 @@ a{
 }
 #seedform{
    position:relative;
-   margin-left: 300px;
 }
 #footer{
   clear:both;
   height:25px;
   text-align:center;
   margin-top:5px;
-  font-size: 15px;
+  font-size: 15px
 }
-#footer a:link {}
-#footer a:visited {}
-#footer a:hover {}
 
