@@ -91,12 +91,13 @@ $(document).ready(function() {
   });
 
   $(".loadmorepaginator").click(function() {
+        alert("shit went down!");
     $.ajax({
       url:$(this).attr("href"), 
       data:{startingfrom:accordioncount, recordcount:2}, success:function(html) {
         $(".accordion").append(html);
-        destroyaccordion();
-        initializeaccordion();
+        $(".accordion").accordion("destroy");
+        $(".accordion").accordion();
         var newcount = $(".accordion").children(".accordioncontent").length;
         if ((newcount - accordioncount) <= 0) return;
         $(".accordion").accordion("option", "active", accordioncount);
