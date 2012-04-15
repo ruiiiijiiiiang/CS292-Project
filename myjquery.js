@@ -87,7 +87,6 @@ $(document).ready(function() {
   // Tab-based paginator
   var $tabs = $(".tabpaginator").tabs({
     load:function() { // Slidedown effect as visual cue to the new content
-	},
   },
     select:function(event, ui) {
         // currenttab is the tab is currently opened. ui.index is the tab that is about to be opened
