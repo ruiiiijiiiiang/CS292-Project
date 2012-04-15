@@ -89,4 +89,22 @@ $(document).ready(function() {
   $("#search").autocomplete({
     source: tags
   });
+
+  $(".loadmorepaginator").click(function() {
+    $.ajax({
+      url:$(this).attr("href"), 
+      data:{startingfrom:accordioncount, recordcount:2}, success:function(html) {
+        $(".accordion").append(html);
+        destroyaccordion();
+        initializeaccordion();
+        var newcount = $(".accordion").children(".accordioncontent").length;
+        if ((newcount - accordioncount) <= 0) return;
+        $(".accordion").accordion("option", "active", accordioncount);
+        if ((newcount - accordioncount) < 2) $(this).hide();
+        accordioncount = newcount;			  
+      }
+    });
+    return false;
+  });
+
 });
