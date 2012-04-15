@@ -46,7 +46,7 @@ include ("navigation.php");
       <?php
         $db = mysql_connect("localhost", "root","philowarlock68");
         mysql_select_db("forest", $db);
-        $result = mysql_query("SELECT * from forest ORDER BY Updated LIMIT 15");
+        $result = mysql_query("SELECT * from forest ORDER BY Updated LIMIT 2");
         while ($row = mysql_fetch_array($result)) {
           echo '<a class="totree" href="#"><img style="margin-left:5px" src=' . $row['Image'] . ' alt="Tree picture" /></a>';
         }
@@ -110,14 +110,24 @@ include ("navigation.php");
   <div id="plantseed_content">
     <h2>Plant a Seed</h2>
     <div id="seedform">
-    <form name="plant_seed_frm" method="post">
-      <label><h2>Story name: </h2></label>
-      <input type="text" name="Name" size="20"/> <br/>
-      <label><h2>Author:</h2></label>
-      <input type="text" name="Author" size="20"/> <br/>
-      <label><h2>Story:</h2></label>
-      <textarea type="text" name="Content" cols="80" rows="25"></textarea> <br/>
-              <input class="totree" type="submit" value="Finished!" />
+    <form name="frmPlantSeed" method="post"
+    <table name="tblPlantSeed" id="tblPlantSeed" BORDER="0" cellpadding="0" cellspacing="0" WIDTH="1000">
+      <tr>
+        <td width="100"></td>
+
+        <td width="300"><label><h2>Story name: </h2></label></td>
+        <td><input type="text" name="Name" size="20"/> <br/></td></tr>
+      <tr>
+        <td width="100"></td>
+        <td width="300"><label><h2>Author:</h2></label></td>
+        <td><input type="text" name="Author" size="20"/> <br/></td></tr>
+      <tr>
+        <td width="100"></td>
+        <td width="300"><label><h2>Story:</h2></label></td>
+        <td> <textarea type="text" name="Content" cols="80" rows="25"></textarea> <br/></td></tr>
+      <tr>
+        <td width="100"></td>
+        <td><input class="totree" type="submit" value="Finished!" /></td></tr></table>
     </form>
     </div>
   </div>
@@ -126,20 +136,21 @@ include ("navigation.php");
     <h3>If you have any questions, comments, or suggestions for us, just fill out the form below and we will get back to you!</h3>
     <br/>
     <form name="frmContactUs" method="post">
-    <table name="tblContactUs" id="tblContactUs" BORDER="0" cellpadding="0" cellspacing="0" WIDTH="750">
+    <table name="tblContactUs" id="tblContactUs" BORDER="0" cellpadding="0" cellspacing="0" WIDTH="1000">
       <tr>
-        <td width="50"></td>
+        <td width="100"></td>
         <td width="300"><label> Your name: </label></td>
         <td><input type="text" name="Name" /><br/></td></tr>
       <tr>
-        <td width="50"></td>
+        <td width="100"></td>
         <td width="300"><label> Your E-mail: </label></td>
-        <td><input type="text" name="Email" /> <br/></td></tr>
+        <td><input type="text" name="Email" /><br/></td></tr>
       <tr>
-        <td width="50"></td>
+        <td width="100"></td>
         <td width="300"><label> Message: </label></td>
-        <td><textarea type="text" name="Message" cols="80" rows="25"></textarea> <br/></td></tr>
+        <td><textarea type="text" name="Message" cols="80" rows="25"></textarea><br/></td></tr>
       <tr>
+        <td width="100"></td>
         <td><input type="submit" value="Send!" /></td></tr>
     </table>
     </form>
