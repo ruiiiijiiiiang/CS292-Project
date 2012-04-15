@@ -79,7 +79,7 @@ a{
 .popup{
   background-color: Chocolate;
   font-size: 0.8em;
-
+}
 #subnav{
   position:relative;
   float:left;
@@ -93,15 +93,24 @@ a{
 }
 #createnode{
   float:left;
-  width:200px;
+  width:400px;
   background:red;
+  margin-top:20px;
+}
+#createnode h2{
   text-align:center;
+}
+#tblCreateNodeSubmit {
+  margin-bottom:10px;
 }
 #bookmarks{
   float:right;
   width:200px;
   background:red;
   text-align:center;
+
+display:none;
+
 }
 #tree{
 }

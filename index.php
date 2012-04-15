@@ -94,22 +94,29 @@ include ("navigation.php");
   </div>
   <div id="tree_content">
     <form id="createnode" name="frmCreateNode" method="post">
-    <table name="tblCreateNode" id="tblCreateNode" BORDER="0" cellpadding="0" cellspacing="0" WIDTH="200">
-    <h2>Create Node</h2>
+      <h2>Create Node</h2>
+    <table name="tblCreateNode" id="tblCreateNode" BORDER="0" cellpadding="0" cellspacing="0" WIDTH="400">
       <tr>
-        <td><label>Author:</label></td></tr>
-      <tr>
-        <td><input type="text" name="Author" /></td></tr>
-      <tr>
+        <td width="10"></td>
         <td><label>Title:</label></td></tr>
       <tr>
-        <td><input type="text" name="Title" /></td></tr>
+        <td width="10"></td>
+        <td><input type="text" name="Title" size="45"/></td></tr>
+     <tr>
+        <td width="10"></td>
+        <td><label>Author:</label></td></tr>
       <tr>
+        <td width="10"></td>
+        <td><input type="text" name="Author" size="45"/></td></tr>
+     <tr>
+        <td width="10"></td>
         <td><label>Story:</label></td></tr>
       <tr>
-        <td><textarea type="text" name="Content" cols="20" rows="20"></textarea></td></tr>
+        <td width="10"></td>
+        <td><textarea type="text" name="Content" cols="45" rows="30"></textarea></td></tr>
       <tr>
-        <td><input type="submit" value="Finished!" /></td></tr></table>
+        <td width="10"></td>
+        <td><input type="submit" value="Publish!" id="tblCreateNodeSubmit"/></td></tr></table>
     </form>
     <div id="bookmarks">
       <a href="#"><h2>Bookmarks</h2></a>
@@ -136,15 +143,15 @@ include ("navigation.php");
       <tr>
         <td width="100"></td>
 
-        <td width="250"><label><h2>Story name: </h2></label></td>
+        <td width="125"><label><strong>Story name: </strong></label></td>
         <td><input type="text" name="Name" size="20"/> <br/></td></tr>
       <tr>
         <td width="100"></td>
-        <td width="250"><label><h2>Author:</h2></label></td>
+        <td width="125"><label><strong>Author:</strong></label></td>
         <td><input type="text" name="Author" size="20"/> <br/></td></tr>
       <tr>
         <td width="100"></td>
-        <td width="250"><label><h2>Story:</h2></label></td>
+        <td width="125"><label><strong>Story:</strong></label></td>
         <td> <textarea type="text" name="Content" cols="80" rows="25"></textarea> <br/></td></tr>
       <tr>
         <td width="100"></td>
@@ -161,11 +168,11 @@ include ("navigation.php");
       <tr>
         <td width="100"></td>
         <td width="125"><label> Your name: </label></td>
-        <td><input type="text" name="Name" /><br/></td></tr>
+        <td><input type="text" name="Name" size="30"/><br/></td></tr>
       <tr>
         <td width="100"></td>
         <td width="125"><label> Your E-mail: </label></td>
-        <td><input type="text" name="Email" /><br/></td></tr>
+        <td><input type="text" name="Email" size="30"/><br/></td></tr>
       <tr>
         <td width="100"></td>
         <td width="125"><label> Message: </label></td>
