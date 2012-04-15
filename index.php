@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <head>
   <title> Index </title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -20,7 +18,7 @@ include ("navigation.php");
     <div id="subnav">
       <?php
         $currID;
-        $db = mysql_connect("localhost", "root","");
+        $db = mysql_connect("localhost", "root","philowarlock68");
         mysql_select_db("forest", $db);
         $result = mysql_query("SELECT Name from forest ORDER BY Name");
         while ($row[] = mysql_fetch_array($result));
@@ -28,17 +26,17 @@ include ("navigation.php");
       <script>
         var tags = ["<?php echo join("\", \"", $row); ?>"];
       </script>
-      <form>
+      <form method="post">
         <input id="search" type="text" name="search"/>
         <input type="submit" value="Search" />
       </form>
       <div id="subnav2">
         <?php
-          $db = mysql_connect("localhost", "root","");
+          $db = mysql_connect("localhost", "root","philowarlock68");
           mysql_select_db("forest", $db);
           $result = mysql_query("SELECT Name from forest ORDER BY Name");
           while ($row = mysql_fetch_array($result)) {
-            echo '<a class="totree" href="#">' . $row['Name'] . '</a>';
+            echo '<a class="totree" href="#">' . $row['Name'] . '</a><br/>';
           }
           mysql_close($db);
         ?>
@@ -46,11 +44,11 @@ include ("navigation.php");
     </div>
     <div id="gallery">
       <?php
-        $db = mysql_connect("localhost", "root","");
+        $db = mysql_connect("localhost", "root","philowarlock68");
         mysql_select_db("forest", $db);
         $result = mysql_query("SELECT * from forest ORDER BY Updated LIMIT 15");
         while ($row = mysql_fetch_array($result)) {
-          echo '<a class="totree" href="#"><img src=' . $row['Image'] . ' alt="Tree picture" /></a>';
+          echo '<a class="totree" href="#"><img style="margin-left:5px" src=' . $row['Image'] . ' alt="Tree picture" /></a>';
         }
         mysql_close($db);
       ?>
@@ -83,7 +81,7 @@ include ("navigation.php");
     </div>
   </div>
   <div id="tree_content">
-    <form id="createnode">
+    <form id="createnode" method="post">
       <h2>Create Node</h2>
         Author: <input type="text" name="Author" /> <br/>
         Blurb: <input type="text" name="Blurb" /> <br/>
@@ -95,7 +93,7 @@ include ("navigation.php");
     </div>
     <div id="tree">
       <?php
-        $db = mysql_connect("localhost", "root","");
+        $db = mysql_connect("localhost", "root","philowarlock68");
         mysql_select_db("forest", $db);
         $result = mysql_query("SELECT * FROM forest WHERE ID=" . $currID);
         $row = mysql_fetch_array($result);
@@ -111,29 +109,38 @@ include ("navigation.php");
   <div id="plantseed_content">
     <h2>Plant a Seed</h2>
     <div id="seedform">
-    <form>
+    <form name="plant_seed_frm" method="post">
       <label><h2>Story name: </h2></label>
-      <input type="text" name="Name" /> <br/>
+      <input type="text" name="Name" size="20"/> <br/>
       <label><h2>Author:</h2></label>
-      <input type="text" name="Author" /> <br/>
+      <input type="text" name="Author" size="20"/> <br/>
       <label><h2>Story:</h2></label>
-      <textarea type="text" name="Content"></textarea> <br/>
+      <textarea type="text" name="Content" cols="80" rows="25"></textarea> <br/>
               <input class="totree" type="submit" value="Finished!" />
     </form>
     </div>
   </div>
   <div id="contactus_content">
     <h2>Contact Us</h2>
-    <h3>If you have any questions, comments, or suggestions for us, just fill out the forms below and we will get back to!</h3>
+    <h3>If you have any questions, comments, or suggestions for us, just fill out the form below and we will get back to you!</h3>
     <br/>
-    <form>
-    <label> Your name: </label>
-    <input type="text" name="Name" /> <br/>
-      <label> Your E-mail: </label>
-      <input type="text" name="Email" /> <br/>
-      <label> Message: </label>
-      <textarea type="text" name="Message"></textarea> <br/>
-      <input type="submit" value="Send!" />
+    <form name="frmContactUs" method="post">
+    <table name="tblContactUs" id="tblContactUs" BORDER="0" cellpadding="0" cellspacing="0" WIDTH="750">
+      <tr>
+        <td width="50"></td>
+        <td width="300"><label> Your name: </label></td>
+        <td><input type="text" name="Name" /><br/></td></tr>
+      <tr>
+        <td width="50"></td>
+        <td width="300"><label> Your E-mail: </label></td>
+        <td><input type="text" name="Email" /> <br/></td></tr>
+      <tr>
+        <td width="50"></td>
+        <td width="300"><label> Message: </label></td>
+        <td><textarea type="text" name="Message" cols="80" rows="25"></textarea> <br/></td></tr>
+      <tr>
+        <td><input type="submit" value="Send!" /></td></tr>
+    </table>
     </form>
   </div>
   <div id="TOU_content">
