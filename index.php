@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <head>
   <title> Index </title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -39,16 +41,19 @@ include ("navigation.php");
         ?>
       </div>
     </div>
-    <div id="gallery">
-      <?php
-        include ("connect.php");
-        $result = mysql_query("SELECT * from forest ORDER BY Updated LIMIT 2");
-        while ($row = mysql_fetch_array($result)) {
-          echo '<a class="totree" href="#"><img style="margin-left:5px" src=' . $row['Image'] . ' alt="Tree picture" /></a>';
-        }
-        mysql_close($db);
-      ?>
-      <h3><a class="loadmorepaginator" href="paginator.php">More...</a></h3>
+  <div id="gallery">
+    <div class="tabpaginator">
+    <?php
+    $result = mysql_query("SELECT COUNT(*) from forest");
+    $count = mysql_result($result, 0);
+    $page = 1;  $startingfrom = 0;  $recordcount = 5;
+    echo '<ul><li><a href="#">Prev</a></li>';
+    while ($count > $startingfrom) {
+    echo '<li><a href="paginator.php?startingfrom=' . $startingfrom . '&recordcount=' . $recordcount . '">' . $page . '</a></li>';
+      $page ++;  $startingfrom += $recordcount;
+    }
+    echo '<li><a href="#">Next</a></li></ul>';
+    ?>
     </div>
   </div>
   <div id="home_content">
