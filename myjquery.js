@@ -90,12 +90,14 @@ $(document).ready(function() {
     source: tags
   });
 
+  //var accordioncount = $(".accordion").children(".accordioncontent").length;
+
   $(".loadmorepaginator").click(function() {
-        alert("shit went down!");
     $.ajax({
-      url:$(this).attr("href"), 
-      data:{startingfrom:accordioncount, recordcount:2}, success:function(html) {
-        $(".accordion").append(html);
+      //url:$(this).attr("href"), 
+      url:"paginator.php",
+      data:{startingfrom:2, recordcount:2}, success:function(html) {
+        /*$(".accordion").append(html);
         $(".accordion").accordion("destroy");
         $(".accordion").accordion();
         var newcount = $(".accordion").children(".accordioncontent").length;
@@ -103,8 +105,10 @@ $(document).ready(function() {
         $(".accordion").accordion("option", "active", accordioncount);
         if ((newcount - accordioncount) < 2) $(this).hide();
         accordioncount = newcount;			  
+        alert("Some other shit went down!");*/
       }
     });
+        alert("Some other shit went down!");
     return false;
   });
 
