@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <head>
   <title> Index </title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -42,17 +44,19 @@ include ("navigation.php");
         ?>
       </div>
     </div>
-    <div id="gallery">
-      <?php
-        $db = mysql_connect("localhost", "root","philowarlock68");
-        mysql_select_db("forest", $db);
-        $result = mysql_query("SELECT * from forest ORDER BY Updated LIMIT 15");
-        while ($row = mysql_fetch_array($result)) {
-          echo '<a class="totree" href="#"><img style="margin-left:5px" src=' . $row['Image'] . ' alt="Tree picture" /></a>';
-        }
-        mysql_close($db);
-      ?>
-      <h3><a class="loadmorepaginator" href="paginator.php">More...</a></h3>
+  <div id="gallery">
+    <div class="tabpaginator">
+    <?php
+    $result = mysql_query("SELECT COUNT(*) from forest");
+    $count = mysql_result($result, 0);
+    $page = 1;  $startingfrom = 0;  $recordcount = 5;
+    echo '<ul><li><a href="#">Prev</a></li>';
+    while ($count > $startingfrom) {
+    echo '<li><a href="paginator.php?startingfrom=' . $startingfrom . '&recordcount=' . $recordcount . '">' . $page . '</a></li>';
+      $page ++;  $startingfrom += $recordcount;
+    }
+    echo '<li><a href="#">Next</a></li></ul>';
+    ?>
     </div>
   </div>
   <div id="home_content">
@@ -110,14 +114,24 @@ include ("navigation.php");
   <div id="plantseed_content">
     <h2>Plant a Seed</h2>
     <div id="seedform">
-    <form name="plant_seed_frm" method="post">
-      <label><h2>Story name: </h2></label>
-      <input type="text" name="Name" size="20"/> <br/>
-      <label><h2>Author:</h2></label>
-      <input type="text" name="Author" size="20"/> <br/>
-      <label><h2>Story:</h2></label>
-      <textarea type="text" name="Content" cols="80" rows="25"></textarea> <br/>
-              <input class="totree" type="submit" value="Finished!" />
+    <form name="frmPlantSeed" method="post"
+    <table name="tblPlantSeed" id="tblPlantSeed" BORDER="0" cellpadding="0" cellspacing="0" WIDTH="1000">
+      <tr>
+        <td width="100"></td>
+
+        <td width="300"><label><h2>Story name: </h2></label></td>
+        <td><input type="text" name="Name" size="20"/> <br/></td></tr>
+      <tr>
+        <td width="100"></td>
+        <td width="300"><label><h2>Author:</h2></label></td>
+        <td><input type="text" name="Author" size="20"/> <br/></td></tr>
+      <tr>
+        <td width="100"></td>
+        <td width="300"><label><h2>Story:</h2></label></td>
+        <td> <textarea type="text" name="Content" cols="80" rows="25"></textarea> <br/></td></tr>
+      <tr>
+        <td width="100"></td>
+        <td><input class="totree" type="submit" value="Finished!" /></td></tr></table>
     </form>
     </div>
   </div>
@@ -126,26 +140,28 @@ include ("navigation.php");
     <h3>If you have any questions, comments, or suggestions for us, just fill out the form below and we will get back to you!</h3>
     <br/>
     <form name="frmContactUs" method="post">
-    <table name="tblContactUs" id="tblContactUs" BORDER="0" cellpadding="0" cellspacing="0" WIDTH="750">
+    <table name="tblContactUs" id="tblContactUs" BORDER="0" cellpadding="0" cellspacing="0" WIDTH="1000">
       <tr>
-        <td width="50"></td>
+        <td width="100"></td>
         <td width="300"><label> Your name: </label></td>
         <td><input type="text" name="Name" /><br/></td></tr>
       <tr>
-        <td width="50"></td>
+        <td width="100"></td>
         <td width="300"><label> Your E-mail: </label></td>
-        <td><input type="text" name="Email" /> <br/></td></tr>
+        <td><input type="text" name="Email" /><br/></td></tr>
       <tr>
-        <td width="50"></td>
+        <td width="100"></td>
         <td width="300"><label> Message: </label></td>
-        <td><textarea type="text" name="Message" cols="80" rows="25"></textarea> <br/></td></tr>
+        <td><textarea type="text" name="Message" cols="80" rows="25"></textarea><br/></td></tr>
       <tr>
+        <td width="100"></td>
         <td><input type="submit" value="Send!" /></td></tr>
     </table>
     </form>
   </div>
   <div id="TOU_content">
-    <h2>Terms of Use</h2>
+    <h2>Terms of Service:</h2>
+    <?php include("termsofuse.php"); ?> 
   </div>
 </div>
 <?php
