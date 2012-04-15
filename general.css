@@ -61,26 +61,26 @@ a{
 #navigation a:visited {}
 #navigation a:hover {
 }
-#content{
-  margin-top:5px;
-}
 #subnav{
+  position:relative;
   float:left;
   width:160px;
 }
-#subnavl{
+#subnav2{
+  position:relative;
+  float:left;
   clear:both;
-  overflow:scroll;
+  width:160px;
 }
 #createnode{
   float:left;
-  width:150px;
+  width:200px;
   background:red;
   text-align:center;
 }
 #bookmarks{
   float:right;
-  width:150px;
+  width:200px;
   background:red;
   text-align:center;
 }
