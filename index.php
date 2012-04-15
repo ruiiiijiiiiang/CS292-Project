@@ -30,6 +30,7 @@ include ("navigation.php");
         <input id="search" type="text" name="search"/>
         <input type="submit" value="Search" />
       </form>
+      </div>
       <div id="subnav2">
         <?php
           include ("connect.php");

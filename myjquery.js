@@ -10,10 +10,6 @@ $(document).ready(function() {
   $("#TOU_content").hide();
   $("#tree_content").hide();
 
-  
-   // A global variable to remember the text area currently being edited
-  var openText;
-  
   $("#tohome").click(function() {
     $("#home_content").show();
     $("#tourguide_content").hide();
@@ -53,7 +49,7 @@ $(document).ready(function() {
     $("#TOU_content").hide();
     $("#tree_content").hide();
   });
-  
+
   $("#tocontactus").click(function() {
     $("#home_content").hide();
     $("#tourguide_content").hide();
@@ -63,7 +59,7 @@ $(document).ready(function() {
     $("#TOU_content").hide();
     $("#tree_content").hide();
   });
-  
+
   $("#toTOU").click(function() {
     $("#home_content").hide();
     $("#tourguide_content").hide();
@@ -73,10 +69,8 @@ $(document).ready(function() {
     $("#TOU_content").show();
     $("#tree_content").hide();
   });
-  
+
   $(".totree").click(function() {
-    //call to other function to generate tree using jquery ui
-    
     $("#home_content").hide();
     $("#tourguide_content").hide();
     $("#plantseed_content").hide();
@@ -93,11 +87,8 @@ $(document).ready(function() {
   // Tab-based paginator
   var $tabs = $(".tabpaginator").tabs({
     load:function() { // Slidedown effect as visual cue to the new content
-<<<<<<< HEAD
 	},
-=======
   },
->>>>>>> 4a01c56f9f5fb99e1110c362257cf5a79b09f9f3
     select:function(event, ui) {
         // currenttab is the tab is currently opened. ui.index is the tab that is about to be opened
 	    var currenttab = $tabs.tabs('option', 'selected');
@@ -122,5 +113,4 @@ $(document).ready(function() {
   });
   // Make the initial landing tab as '1', and disable 'Prev' tab
   $tabs.tabs('select', 1);  $tabs.tabs("disable", 0);  
-
 });
