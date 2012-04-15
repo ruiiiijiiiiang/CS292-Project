@@ -1,11 +1,4 @@
 <?php
-
-<<<<<<< HEAD
-	// validate input
-=======
-    // validate input
->>>>>>> 4a01c56f9f5fb99e1110c362257cf5a79b09f9f3
-
 	$options = array(
 
 		'options' => array(
@@ -24,8 +17,6 @@
 
 	if (!filter_var($startingindex, FILTER_VALIDATE_INT, $options) && $startingindex != 0) die(); // 0 and FALSE are of the same value
 
-
-
 	// Fetch records
 
 	$db = mysql_connect("localhost", "root", "");
@@ -37,9 +28,4 @@
 		echo '<a class="totree" href="#"><img style"=margin-left:5px" src=' . $row['Image'] . ' alt="Tree Picture" /></a>';
 	}
 	mysql_close($db);
-
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> 4a01c56f9f5fb99e1110c362257cf5a79b09f9f3
