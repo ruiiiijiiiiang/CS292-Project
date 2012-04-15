@@ -52,6 +52,7 @@ include ("navigation.php");
         }
         mysql_close($db);
       ?>
+      <h3><a class="loadmorepaginator" href="paginator.php">More...</a></h3>
     </div>
   </div>
   <div id="home_content">
