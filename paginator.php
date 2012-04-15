@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 	// validate input
+=======
+    // validate input
+>>>>>>> 4a01c56f9f5fb99e1110c362257cf5a79b09f9f3
 
 	$options = array(
 
@@ -34,4 +38,8 @@
 	}
 	mysql_close($db);
 
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> 4a01c56f9f5fb99e1110c362257cf5a79b09f9f3
