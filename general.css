@@ -50,19 +50,36 @@ a{
 	margin-top:5px;
 	text-align:center;
 	font-size: 20px;
+	font-weight: bold;
+	background-image: url(navigation.jpg);
  }
 #navigation li{
 	list-style-type:none;
 	display:inline;
+	position:relative
 }
 #navigation a{
 	margin-left:10px;
 	margin-right:10px;
 }
+
+#navigation li span{
+  display:none;
+  position:absolute;
+}
+
+#navigation li:hover span{
+  display:block;
+}
+
 #navigation a:link {}
 #navigation a:visited {}
-#navigation a:hover {
-}
+#navigation a:hover {}
+
+.popup{
+  background-color: Chocolate;
+  font-size: 0.8em;
+
 #subnav{
   position:relative;
   float:left;
