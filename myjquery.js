@@ -112,4 +112,4 @@ $(document).ready(function() {
   });
   // Make the initial landing tab as '1', and disable 'Prev' tab
   $tabs.tabs('select', 1);  $tabs.tabs("disable", 0);  
-);
+});
