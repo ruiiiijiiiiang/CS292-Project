@@ -28,11 +28,12 @@ a{
 	width:150px;
 }
 #logo img{
-	width:150px;
-	height:125px;
+	width:1024px;
+	height:200px;
 	overflow:auto;
 }
 #siteTitle {
+    display:none;
 	float:left;
 	position:relative;
 	padding-top:40px;
