@@ -139,7 +139,7 @@ include ("navigation.php");
     <h2>Plant a Seed</h2>
     <div id="seedform">
     <form name="frmPlantSeed" method="post">
-    <table name="tblPlantSeed" id="tblPlantSeed" BORDER="0" cellpadding="0" cellspacing="0" WIDTH="1000">
+    <table name="tblPlantSeed" id="tblPlantSeed" BORDER="0" cellpadding="0" cellspacing="10" WIDTH="1000">
       <tr>
         <td width="100"></td>
 
@@ -164,7 +164,7 @@ include ("navigation.php");
     <h3>If you have any questions, comments, or suggestions for us, just fill out the form below and we will get back to you!</h3>
     <br/>
     <form name="frmContactUs" method="post">
-    <table name="tblContactUs" id="tblContactUs" BORDER="0" cellpadding="0" cellspacing="0" WIDTH="1000">
+    <table name="tblContactUs" id="tblContactUs" BORDER="0" cellpadding="0" cellspacing="10" WIDTH="1000">
       <tr>
         <td width="100"></td>
         <td width="125"><label> Your name: </label></td>
