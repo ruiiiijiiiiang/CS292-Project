@@ -2,7 +2,7 @@
   <div id="header">
   
   <div id="logo">
-    <img src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" alt="Tree Logo" />
+    <img src="logo.jpg" alt="Tree Logo" />
   </div>
 
   <div id="siteTitle">
