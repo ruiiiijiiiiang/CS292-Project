@@ -2,7 +2,7 @@
   <div id="header">
   
   <div id="logo">
-    <img src="logo.jpg" alt="Tree Logo" />
+    <a href="#"><img src="logo.jpg" alt="Tree Logo" /></a>
   </div>
 
   <div id="siteTitle">

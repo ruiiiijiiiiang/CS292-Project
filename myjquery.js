@@ -10,6 +10,16 @@ $(document).ready(function() {
   $("#TOU_content").hide();
   $("#tree_content").hide();
 
+  $("#logo").click(function() {
+    $("#home_content").show();
+    $("#tourguide_content").hide();
+    $("#plantseed_content").hide();
+    $("#forest_content").hide();
+    $("#contactus_content").hide();
+    $("#TOU_content").hide();
+    $("#tree_content").hide();
+  });
+
   $("#tohome").click(function() {
     $("#home_content").show();
     $("#tourguide_content").hide();
