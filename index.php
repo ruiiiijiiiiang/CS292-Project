@@ -21,7 +21,7 @@ include ("navigation.php");
       <?php
         include ("connect.php");        
         $result = mysql_query("SELECT Name from forest ORDER BY Name");
-        while ($row[] = mysql_fetch_array($result));
+        while ($row = mysql_fetch_array($result));
       ?>
       <script>
         var tags = ["<?php echo join("\", \"", $row); ?>"];
@@ -117,7 +117,7 @@ include ("navigation.php");
     <div id="tree">
       <?php
         include ("connect.php");
-        $result = mysql_query("SELECT * FROM forest WHERE ID=" . $currID);
+        $result = mysql_query("SELECT * FROM `forest` WHERE `ID`= $currID");
         $row = mysql_fetch_array($result);
         echo '<a class="totree" href="#">' . $row['Name'] . '</a>';
         
