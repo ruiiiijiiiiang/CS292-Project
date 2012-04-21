@@ -8,6 +8,8 @@
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
   <script type="text/javascript" src="myjquery.js"></script>
+  <script type="text/javascript" src="jit.js"></script>
+  <script type="text/javascript" src="example2.js"></script>
 </head>
 
 <body>
@@ -33,13 +35,17 @@ include ("navigation.php");
     </div>
     <div id="subnav2">
       <?php
+        include ("var.php");
         include ("connect.php");
-        $result = mysql_query("SELECT Name from forest ORDER BY Name");
+        $result = mysql_query("SELECT * from forest ORDER BY Name");
         while ($row = mysql_fetch_array($result)) {
-          echo '<a class="totree" href="#">' . $row['Name'] . '</a><br/>';
+          echo '<a class="totree" onclick= "myinit(' . start($row['ID']) . ');" href="#">' . $row['Name'] . '</a><br/>';
         }
         mysql_close($db);
       ?>
+      <script language="javascript">
+        function myinit($curr){var json = $curr; init(json);}
+      </script>
     </div>
     <div id="gallery">
       <div class="tabpaginator">
@@ -60,12 +66,6 @@ include ("navigation.php");
   <div id="home_content">
     <h2>Home</h2>
     <div id="login">
-      <!-- 
-        <form>
-          <input type="text" name="user" value="yourEmail@mail.com"/>
-          <input type="submit" value="Join!" />
-        </form>
-      -->
     <iframe src="https://www.facebook.com/plugins/like.php?href=broken.html" scrolling="no" frameborder="0" style="border:none; width:325px; height:80px"></iframe>
     </div>
   </div>
@@ -101,39 +101,24 @@ include ("navigation.php");
         <td><label>Title:</label></td></tr>
       <tr>
         <td width="10"></td>
-        <td><input type="text" name="Title" size="45"/></td></tr>
+        <td><input type="text" name="Title" size="25"/></td></tr>
      <tr>
         <td width="10"></td>
         <td><label>Author:</label></td></tr>
       <tr>
         <td width="10"></td>
-        <td><input type="text" name="Author" size="45"/></td></tr>
+        <td><input type="text" name="Author" size="25"/></td></tr>
      <tr>
         <td width="10"></td>
         <td><label>Story:</label></td></tr>
       <tr>
         <td width="10"></td>
-        <td><textarea type="text" name="Content" cols="45" rows="30"></textarea></td></tr>
+        <td><textarea type="text" name="Content" cols="25" rows="20"></textarea></td></tr>
       <tr>
         <td width="10"></td>
         <td><input type="submit" value="Publish!" id="tblCreateNodeSubmit"/></td></tr></table>
     </form>
-    <div id="bookmarks">
-      <a href="#"><h2>Bookmarks</h2></a>
-    </div>
-    <div id="tree">
-      <?php
-        include ("connect.php");
-        $result = mysql_query("SELECT * FROM `forest` WHERE `ID`= $currID");
-        $row = mysql_fetch_array($result);
-        echo '<a class="totree" href="#">' . $row['Name'] . '</a>';
-        
-        //select table $currID, use mySQL and DFS to generate input for tree
-        //call jquery function that is now  $(".totree").click
-        
-        mysql_close($db);
-      ?>
-    </div>
+    <div id="infovis"></div>  
   </div>
   <div id="plantseed_content">
     <h2>Plant a Seed</h2>

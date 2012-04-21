@@ -93,9 +93,8 @@ a{
 }
 #createnode{
   float:left;
-  width:400px;
+  width:250px;
   background:red;
-  margin-top:20px;
 }
 #createnode h2{
   text-align:center;
@@ -103,16 +102,14 @@ a{
 #tblCreateNodeSubmit {
   margin-bottom:10px;
 }
-#bookmarks{
-  float:right;
-  width:200px;
+#infovis{
+  margin-top:10px;
+  margin-left:auto;
+  margin-right:auto;
+  width:750px;
+  height:600px;
+  overflow:hidden;
   background:red;
-  text-align:center;
-
-display:none;
-
-}
-#tree{
 }
 #tourguide_content li{
 	margin-left:40px;
