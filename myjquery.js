@@ -90,9 +90,11 @@ $(document).ready(function() {
     $("#tree_content").show();
   });
 
+  
   $("#search").autocomplete({
-    source: tags
+    source:tags
   });
+
 
   // Tab-based paginator
   var $tabs = $(".tabpaginator").tabs({

@@ -17,17 +17,20 @@
 <?php
 include ("header.php");
 include ("navigation.php");
+include ("var.php");
 ?>
   <div id="forest_content">
     <div id="subnav">
       <?php
         include ("connect.php");        
         $result = mysql_query("SELECT Name from forest ORDER BY Name");
+        $row = mysql_fetch_array($result);
+        $names = '\&quot' . $row['Name'] . '\&quot';
         while ($row = mysql_fetch_array($result));
+          $names = $names . ',\&quot' . $row['Name'] . '\&quot';
+        echo '<script type="text/javascript">var tags = ["'.$names. '"]; </script>';
       ?>
-      <script>
-        var tags = ["<?php echo join("\", \"", $row); ?>"];
-      </script>
+
       <form name="frmTreeSearch" method="post">
         <input id="search" type="text" name="search"/>
         <input type="submit" value="Search" /><br/>
@@ -35,17 +38,12 @@ include ("navigation.php");
     </div>
     <div id="subnav2">
       <?php
-        include ("var.php");
-        include ("connect.php");
+        //include ("connect.php");
         $result = mysql_query("SELECT * from forest ORDER BY Name");
         while ($row = mysql_fetch_array($result)) {
-          echo '<a class="totree" onclick= "myinit(' . start($row['ID']) . ');" href="#">' . $row['Name'] . '</a><br/>';
+          echo '<a class="totree" href="#" onclick= "myinit(&quot'. htmlspecialchars(start($row['ID'])) . '&quot);">' . $row['Name'] . '</a><br/>';
         }
-        mysql_close($db);
       ?>
-      <script language="javascript">
-        function myinit($curr){var json = $curr; init(json);}
-      </script>
     </div>
     <div id="gallery">
       <div class="tabpaginator">

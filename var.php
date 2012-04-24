@@ -1,6 +1,5 @@
 <html>
 <?php
-  //include("connect.php");
   $id=0;
   
   function ncolor($num, $total){
@@ -57,7 +56,7 @@
       die(mysql_error());
     }
     $row = mysql_fetch_array($result);
-    $tmp = '{id:\"' . $row['ID'] . '\",name:\"' . $row['Title'] . '\",data:{$color:\"' . ncolor($row['rNum'], $row['rTotal']) . '\"},children:[' . helper($curr) . ']}';
+    $tmp = '{id:\"' . $row['ID'] . '\",name:\"' . $row['Title'] . '\",data:{$color:\"' . ncolor($row['rNum'], $row['rTotal']) . '\",$author:\"' . $row['Author'] . '\", $content:\"' . $row['Content'] . '\"},children:[' . helper($curr) . ']}';
     return $tmp;
   }
   
@@ -67,6 +66,5 @@
     $id = $treeid;
     return buildjson(1);
   }
-  //mysql_close($db);
 ?>
 </html>
