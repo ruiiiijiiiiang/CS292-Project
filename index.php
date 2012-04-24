@@ -26,8 +26,8 @@ include ("var.php");
         $result = mysql_query("SELECT Name from forest ORDER BY Name");
         $row = mysql_fetch_array($result);
         $names = '\&quot' . $row['Name'] . '\&quot';
-        while ($row = mysql_fetch_array($result));
-          $names = $names . ',\&quot' . $row['Name'] . '\&quot';
+        while ($row = mysql_fetch_array($result))
+          $names = $names . ',\"' . $row['Name'] . '\"';
         echo '<script type="text/javascript">var tags = ["'.$names. '"]; </script>';
       ?>
 
