@@ -109,6 +109,7 @@ a{
   width:750px;
   height:600px;
   overflow:hidden;
+  background:green;
 }
 #tourguide_content li{
 	margin-left:40px;
@@ -116,6 +117,7 @@ a{
 #gallery{
   float:right;
   width:850px;
+  display:none;
 }
 #gallery img{
   width:19.5%;

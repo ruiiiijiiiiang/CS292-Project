@@ -25,7 +25,7 @@ include ("var.php");
         include ("connect.php");        
         $result = mysql_query("SELECT Name from forest ORDER BY Name");
         $row = mysql_fetch_array($result);
-        $names = '\&quot' . $row['Name'] . '\&quot';
+        $names = '\"' . $row['Name'] . '\"';
         while ($row = mysql_fetch_array($result))
           $names = $names . ',\"' . $row['Name'] . '\"';
         echo '<script type="text/javascript">var tags = ["'.$names. '"]; </script>';
@@ -41,10 +41,11 @@ include ("var.php");
         //include ("connect.php");
         $result = mysql_query("SELECT * from forest ORDER BY Name");
         while ($row = mysql_fetch_array($result)) {
-          echo '<a class="totree" href="#" onclick= "myinit(&quot'. htmlspecialchars(start($row['ID'])) . '&quot);">' . $row['Name'] . '</a><br/>';
+          echo '<a href="#" onclick= "myinit(&quot'. htmlspecialchars(start($row['ID'])) . '&quot);">' . $row['Name'] . '</a><br/>';
         }
       ?>
     </div>
+    <div id="infovis"></div>
     <div id="gallery">
       <div class="tabpaginator">
         <?php
@@ -116,7 +117,7 @@ include ("var.php");
         <td width="10"></td>
         <td><input type="submit" value="Publish!" id="tblCreateNodeSubmit"/></td></tr></table>
     </form>
-    <div id="infovis"></div>  
+<!--    <div id="infovis"></div>  -->
   </div>
   <div id="plantseed_content">
     <h2>Plant a Seed</h2>
