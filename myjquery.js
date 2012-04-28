@@ -95,7 +95,14 @@ $(document).ready(function() {
     source:tags
   });
 
-
+  $("#plantseed_button").click(function(){
+    //ajax, insert into database
+  });
+  
+  $("#createnode_button").click(function(){
+    //ajax, insert into database
+  });
+  
   // Tab-based paginator
   var $tabs = $(".tabpaginator").tabs({
     load:function() { // Slidedown effect as visual cue to the new content

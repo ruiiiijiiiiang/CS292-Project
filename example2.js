@@ -27,7 +27,8 @@ var Log = {
 };
 **/
 function myinit(curr){
-  var json = curr; 
+  var json = curr;
+  document.getElementById('infovis').innerHTML = "";
   init(json);
 };
 function init(tmp){
@@ -80,7 +81,7 @@ function init(tmp){
     //init Spacetree
     //Create a new ST instance
     var st = new $jit.ST({
-        'injectInto': 'infovis',
+        injectInto: 'infovis',
         //set duration for the animation
         duration: 620,
         //set animation transition type
@@ -122,7 +123,7 @@ function init(tmp){
             label.id = node.id;            
             label.innerHTML = node.name;
             label.onclick = function(){
-                st.onClick(node.id);
+                st.onClick(node.id, {onComplete:function(){alert("Author: " + node.data.$author + "\n" + node.data.$content);}});
                 //call lightbox of node.id's info
             };
             //set label styles

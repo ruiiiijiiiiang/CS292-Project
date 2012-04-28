@@ -18,11 +18,11 @@
 include ("header.php");
 include ("navigation.php");
 include ("var.php");
+include ("connect.php");
 ?>
   <div id="forest_content">
     <div id="subnav">
-      <?php
-        include ("connect.php");        
+      <?php        
         $result = mysql_query("SELECT Name from forest ORDER BY Name");
         $row = mysql_fetch_array($result);
         $names = '\"' . $row['Name'] . '\"';
@@ -38,10 +38,9 @@ include ("var.php");
     </div>
     <div id="subnav2">
       <?php
-        //include ("connect.php");
         $result = mysql_query("SELECT * from forest ORDER BY Name");
         while ($row = mysql_fetch_array($result)) {
-          echo '<a href="#" onclick= "myinit(&quot'. htmlspecialchars(start($row['ID'])) . '&quot);">' . $row['Name'] . '</a><br/>';
+          echo '<a href="#' . $row['Name'] . '" onclick= "myinit(&quot'. htmlspecialchars(start($row['ID'])) . '&quot);">' . $row['Name'] . '</a><br/>';
         }
       ?>
     </div>
@@ -115,7 +114,7 @@ include ("var.php");
         <td><textarea type="text" name="Content" cols="25" rows="20"></textarea></td></tr>
       <tr>
         <td width="10"></td>
-        <td><input type="submit" value="Publish!" id="tblCreateNodeSubmit"/></td></tr></table>
+        <td><input id="createnode_button" type="submit" value="Publish!"/></td></tr></table>
     </form>
 <!--    <div id="infovis"></div>  -->
   </div>
@@ -139,7 +138,7 @@ include ("var.php");
         <td> <textarea type="text" name="Content" cols="80" rows="25"></textarea> <br/></td></tr>
       <tr>
         <td width="100"></td>
-        <td><input class="totree" type="submit" value="Finished!" /></td></tr></table>
+        <td><input id="plantseed_button" type="submit" value="Finished!" /></td></tr></table>
     </form>
     </div>
   </div>
