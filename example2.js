@@ -123,8 +123,30 @@ function init(tmp){
             label.id = node.id;            
             label.innerHTML = node.name;
             label.onclick = function(){
-                st.onClick(node.id, {onComplete:function(){alert("Author: " + node.data.$author + "\n" + node.data.$content);}});
-                //call lightbox of node.id's info
+                st.onClick(node.id, {onComplete:function(){
+                  //alert("Author: " + node.data.$author + "\n" + node.data.$content);
+                  //call lightbox of node.id's info
+                  var $dialog = $('<div><p>Author: ' + node.data.$author + '<br />' + node.data.$content +'</p></div>');
+                  $dialog.dialog({
+                    title: node.name,
+                    minwidth: 100,
+                    minheight: 100,
+                    draggable:true,
+                    //modal:true,
+                    //position:"right",
+                    resizable:true,
+                    buttons:{ "Create Node": function() { 
+                                $(this).html('<div><p>Author: ' + node.data.$author + '<br />' + node.data.$content +' <form>Title: <input type="text" name="Title" /><br />Author: <input type="text" name="Title" /><br />Story: <input type="text" name="Title" /></form></p></div>');
+                                $(this).dialog({
+                                  title: 'Create Node',
+                                  buttons:{"Submit": function() {$(this).dialog("close");}
+                                  }
+                                }); 
+                              } 
+                            }
+                  });
+                  $dialog.dialog('open');
+                }});
             };
             //set label styles
             var style = label.style;
