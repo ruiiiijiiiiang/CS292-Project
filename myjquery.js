@@ -89,16 +89,6 @@ $(document).ready(function() {
     $("#TOU_content").hide();
     $("#tree_content").show();
   });
-
-  $("#afterplantseed").click(function() {
-    $("#home_content").hide();
-    $("#tourguide_content").hide();
-    $("#plantseed_content").hide();
-    $("#forest_content").show();
-    $("#contactus_content").hide();
-    $("#TOU_content").hide();
-    $("#tree_content").hide();
-  });
     
   $("#search").autocomplete({
     source:tags

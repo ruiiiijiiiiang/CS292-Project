@@ -137,7 +137,7 @@ include ("var.php");
         <td> <textarea type="text" name="Content" cols="80" rows="25"></textarea> <br/></td></tr>
       <tr>
         <td width="100"></td>
-        <td><input id="afterplantseed" type="submit" value="Finished!" /></td></tr>
+        <td><input type="submit" value="Finished!" /></td></tr>
     </table>
     </form>
     </div>
