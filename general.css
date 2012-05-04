@@ -81,6 +81,7 @@ a{
   font-size: 0.8em;
 }
 #subnav{
+  display:none;
   position:relative;
   float:left;
   width:160px;

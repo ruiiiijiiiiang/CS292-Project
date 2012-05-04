@@ -137,7 +137,7 @@ function init(tmp, treeid){
                     //modal:true,
                     //position:"right",
                     resizable:true,
-                    buttons:{ "Create Node": function() { 
+                    buttons:{ "Create Branch": function() { 
                                 $(this).html('<div><p>Author: ' + node.data.$author + '<br />' + node.data.$content +' <br /><br />New Node<br /><form action="createnode.php" method="post">Title: <input type="text" name="Title" /><br />Author: <input type="text" name="Author" /><br />Story: <input type="text" name="Story" /><br /><input type="submit" name="Submit" /><input type="hidden" name="tree_id" value="' + treeid + '"><input type="hidden" name="node_id" value="' + node.id + '"></form></p></div>');
                                 $(this).dialog({
                                   buttons:{ /*"Submit": function() {
