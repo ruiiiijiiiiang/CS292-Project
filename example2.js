@@ -126,22 +126,27 @@ function init(tmp){
                 st.onClick(node.id, {onComplete:function(){
                   //alert("Author: " + node.data.$author + "\n" + node.data.$content);
                   //call lightbox of node.id's info
+                  
+                  
                   var $dialog = $('<div><p>Author: ' + node.data.$author + '<br />' + node.data.$content +'</p></div>');
                   $dialog.dialog({
                     title: node.name,
                     minwidth: 100,
                     minheight: 100,
                     draggable:true,
+                    closeText:"x",
                     //modal:true,
                     //position:"right",
                     resizable:true,
                     buttons:{ "Create Node": function() { 
-                                $(this).html('<div><p>Author: ' + node.data.$author + '<br />' + node.data.$content +' <form>Title: <input type="text" name="Title" /><br />Author: <input type="text" name="Title" /><br />Story: <input type="text" name="Title" /></form></p></div>');
+                                $(this).html('<div><p>Author: ' + node.data.$author + '<br />' + node.data.$content +' <br /><br />New Node<br /><form action="createnode.php" method="post">Title: <input type="text" name="Title" /><br />Author: <input type="text" name="Author" /><br />Story: <input type="text" name="Story" /><br /><input type="submit" name="Submit" /></form></p></div>');
                                 $(this).dialog({
-                                  title: 'Create Node',
-                                  buttons:{"Submit": function() {$(this).dialog("close");}
+                                  buttons:{ /*"Submit": function() {
+                                      //insert form data into database
+                                      $(this).dialog("close");
+                                    }*/
                                   }
-                                }); 
+                                });
                               } 
                             }
                   });

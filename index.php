@@ -15,10 +15,10 @@
 <body>
 <div id="container">
 <?php
+include ("connect.php");
 include ("header.php");
 include ("navigation.php");
 include ("var.php");
-include ("connect.php");
 ?>
   <div id="forest_content">
     <div id="subnav">
@@ -121,8 +121,8 @@ include ("connect.php");
   <div id="plantseed_content">
     <h2>Plant a Seed</h2>
     <div id="seedform">
-    <form name="frmPlantSeed" method="post">
-    <table name="tblPlantSeed" id="tblPlantSeed" BORDER="0" cellpadding="0" cellspacing="10" WIDTH="1000">
+    <form action="plantseed.php" method="post">
+    <table id="tblPlantSeed" BORDER="0" cellpadding="0" cellspacing="10" WIDTH="1000">
       <tr>
         <td width="100"></td>
 
@@ -138,7 +138,8 @@ include ("connect.php");
         <td> <textarea type="text" name="Content" cols="80" rows="25"></textarea> <br/></td></tr>
       <tr>
         <td width="100"></td>
-        <td><input id="plantseed_button" type="submit" value="Finished!" /></td></tr></table>
+        <td><input type="submit" value="Finished!" /></td></tr>
+    </table>
     </form>
     </div>
   </div>
