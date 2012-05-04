@@ -40,7 +40,7 @@ include ("var.php");
       <?php
         $result = mysql_query("SELECT * from forest ORDER BY Name");
         while ($row = mysql_fetch_array($result)) {
-          echo '<a href="#' . $row['Name'] . '" onclick= "myinit(&quot'. htmlspecialchars(start($row['ID'])) . '&quot);">' . $row['Name'] . '</a><br/>';
+          echo '<a href="#' . $row['Name'] . '" onclick= "myinit(&quot'. htmlspecialchars(start($row['ID'])) . '&quot, ' . $row['ID'] . ');">' . $row['Name'] . '</a><br/>';
         }
       ?>
     </div>
