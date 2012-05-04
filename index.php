@@ -116,7 +116,6 @@ include ("var.php");
         <td width="10"></td>
         <td><input id="createnode_button" type="submit" value="Publish!"/></td></tr></table>
     </form>
-<!--    <div id="infovis"></div>  -->
   </div>
   <div id="plantseed_content">
     <h2>Plant a Seed</h2>
@@ -138,7 +137,7 @@ include ("var.php");
         <td> <textarea type="text" name="Content" cols="80" rows="25"></textarea> <br/></td></tr>
       <tr>
         <td width="100"></td>
-        <td><input type="submit" value="Finished!" /></td></tr>
+        <td><input id="afterplantseed" type="submit" value="Finished!" /></td></tr>
     </table>
     </form>
     </div>
