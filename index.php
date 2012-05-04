@@ -144,27 +144,8 @@ include ("var.php");
   </div>
   <div id="contactus_content">
     <h2>Contact Us</h2>
-    <h3>If you have any questions, comments, or suggestions for us, just fill out the form below and we will get back to you!</h3>
+    <p>If you have any questions, comments, or suggestions for us, just <a href="mailto:webmaster.ficforest@gmail.com?Subject=Hello">send us an email</a> and we will get back to you!</p>
     <br/>
-    <form name="frmContactUs" method="post">
-    <table name="tblContactUs" id="tblContactUs" BORDER="0" cellpadding="0" cellspacing="10" WIDTH="1000">
-      <tr>
-        <td width="100"></td>
-        <td width="125"><label> Your name: </label></td>
-        <td><input type="text" name="Name" size="30"/><br/></td></tr>
-      <tr>
-        <td width="100"></td>
-        <td width="125"><label> Your E-mail: </label></td>
-        <td><input type="text" name="Email" size="30"/><br/></td></tr>
-      <tr>
-        <td width="100"></td>
-        <td width="125"><label> Message: </label></td>
-        <td><textarea type="text" name="Message" cols="80" rows="25"></textarea><br/></td></tr>
-      <tr>
-        <td width="100"></td>
-        <td><input type="submit" value="Send!" /></td></tr>
-    </table>
-    </form>
   </div>
   <div id="TOU_content">
     <h2>Terms of Service:</h2>
