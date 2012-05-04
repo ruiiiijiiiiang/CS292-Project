@@ -1,5 +1,6 @@
 <html>
-<div>
+<div id="tos_id">
+        <h2>Terms of Service:</h2><br />
         <p>This Terms of Service is created under the Creative Commons Sharealike license.</p>
         <p>The following terms and conditions govern all use of the FicForest__.com website and all content, services and products available at or through the website. The Website is owned and operated by FicForest__. The Website is offered subject to your acceptance without modification of all of the terms and conditions contained herein and all other operating rules, policies and procedures that may be published from time to time on this Site.</p>
         <p>Please read this Agreement carefully before accessing or using the Website. By accessing or using any part of the web site, you agree to become bound by the terms and conditions of this agreement. If you do not agree to all the terms and conditions of this agreement, then you may not access the Website or use any services. If these terms and conditions are considered an offer, acceptance is expressly limited to these terms.</p>
