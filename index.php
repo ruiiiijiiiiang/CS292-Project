@@ -45,21 +45,6 @@ include ("var.php");
       ?>
     </div>
     <div id="infovis"></div>
-    <div id="gallery">
-      <div class="tabpaginator">
-        <?php
-        $result = mysql_query("SELECT COUNT(*) from forest");
-        $count = mysql_result($result, 0);
-        $page = 1;  $startingfrom = 0;  $recordcount = 5;
-        echo '<ul><li><a href="#">Prev</a></li>';
-        while ($count > $startingfrom) {
-        echo '<li><a href="paginator.php?startingfrom=' . $startingfrom . '&recordcount=' . $recordcount . '">' . $page . '</a></li>';
-          $page ++;  $startingfrom += $recordcount;
-        }
-        echo '<li><a href="#">Next</a></li></ul>';
-        ?>
-      </div>
-    </div>
   </div>
   <div id="home_content">
     <div id="login">
@@ -68,7 +53,7 @@ include ("var.php");
     <div id="welcomenote">
       <h1>Welcome to FicForest!</h1>
       <p>Welcome to FicForest, a wonderful forest of storytelling and literary adenture!</p><br />
-      <p>FicForest is a website where stories are no longer static, constant things that exist  as they are written by a single author.  here writing is dynamic - always growing and branching out in new directions.</p><br />
+      <p>FicForest is a website where stories are no longer static, constant things that exist  as they are written by a single author.  Here writing is dynamic - always growing and branching out in new directions.</p><br />
       <p>Have you ever been reading something and wondered how the plot or characters or setting would have been affected if something had gone differently at some point or points along the way?  We believe that you shouldno longer just have to wonder - all the writing here is in a format where it's easy for stories to branch off and take any number of courses from any single point along the way.</p><br />
       <p>We are a community of authors and readers collaboratin on writing and scrutinizing every part of stories - characters, plots, settings, and everything else that comes together to make them the entertainment we so love.</p><br /><br />
       <p>Take a tour by clicking the the navigation bar above, or just jump in on your own and explore this forest of fiction for yourself!</p>
@@ -98,33 +83,6 @@ include ("var.php");
         <p>If you want to start your own new story, click "Plant a Seed" on the navigation bar at the top and just like contributing a branch to an existing story, you can title and write your own new story beginning!  Click "Finished!" when you're done, and that's all it takes!</p><br />
       </div>
     </div>
-  </div>
-  <div id="tree_content">
-    <form id="createnode" name="frmCreateNode" method="post">
-      <h2>Create Node</h2>
-    <table name="tblCreateNode" id="tblCreateNode" BORDER="0" cellpadding="0" cellspacing="0" WIDTH="400">
-      <tr>
-        <td width="10"></td>
-        <td><label>Title:</label></td></tr>
-      <tr>
-        <td width="10"></td>
-        <td><input type="text" name="Title" size="25"/></td></tr>
-     <tr>
-        <td width="10"></td>
-        <td><label>Author:</label></td></tr>
-      <tr>
-        <td width="10"></td>
-        <td><input type="text" name="Author" size="25"/></td></tr>
-     <tr>
-        <td width="10"></td>
-        <td><label>Story:</label></td></tr>
-      <tr>
-        <td width="10"></td>
-        <td><textarea type="text" name="Content" cols="25" rows="20"></textarea></td></tr>
-      <tr>
-        <td width="10"></td>
-        <td><input id="createnode_button" type="submit" value="Publish!"/></td></tr></table>
-    </form>
   </div>
   <div id="plantseed_content">
     <h2>Plant a Seed</h2>

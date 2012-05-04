@@ -35,13 +35,6 @@ a{
 	height:200px;
 	overflow:auto;
 }
-#siteTitle {
-  display:none;
-	float:left;
-	position:relative;
-	padding-top:40px;
-	padding-left:100px;
-}
 #login{
 	float:right;
 	position:relative;
@@ -100,17 +93,6 @@ a{
   width:160px;
   margin-left:25px;
 }
-#createnode{
-  float:left;
-  width:250px;
-  background:red;
-}
-#createnode h2{
-  text-align:center;
-}
-#tblCreateNodeSubmit {
-  margin-bottom:10px;
-}
 #infovis{
   margin-top:10px;
   margin-left:auto;
@@ -125,16 +107,6 @@ a{
 }
 #tourguide_content li{
 	margin-left:40px;
-}
-#gallery{
-  float:right;
-  width:850px;
-  display:none;
-}
-#gallery img{
-  width:19.5%;
-  height:150px;
-  overflow:auto;
 }
 #plantseed_content h2 {
   margin-left:25px;
