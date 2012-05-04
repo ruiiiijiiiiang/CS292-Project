@@ -89,8 +89,7 @@ $(document).ready(function() {
     $("#TOU_content").hide();
     $("#tree_content").show();
   });
-
-  
+    
   $("#search").autocomplete({
     source:tags
   });

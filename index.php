@@ -40,7 +40,7 @@ include ("var.php");
       <?php
         $result = mysql_query("SELECT * from forest ORDER BY Name");
         while ($row = mysql_fetch_array($result)) {
-          echo '<a href="#' . $row['Name'] . '" onclick= "myinit(&quot'. htmlspecialchars(start($row['ID'])) . '&quot);">' . $row['Name'] . '</a><br/>';
+          echo '<a href="#' . $row['Name'] . '" onclick= "myinit(&quot'. htmlspecialchars(start($row['ID'])) . '&quot, ' . $row['ID'] . ');">' . $row['Name'] . '</a><br/>';
         }
       ?>
     </div>
@@ -125,12 +125,11 @@ include ("var.php");
         <td width="10"></td>
         <td><input id="createnode_button" type="submit" value="Publish!"/></td></tr></table>
     </form>
-<!--    <div id="infovis"></div>  -->
   </div>
   <div id="plantseed_content">
     <h2>Plant a Seed</h2>
     <div id="seedform">
-    <form action="plantseed.php" method="post">
+    <form action="plantseed.php" target="" method="post">
     <table id="tblPlantSeed" BORDER="0" cellpadding="0" cellspacing="10" WIDTH="1000">
       <tr>
         <td width="100"></td>
@@ -153,28 +152,9 @@ include ("var.php");
     </div>
   </div>
   <div id="contactus_content">
-    <h2>Contact Us</h2><br />
-    <h3>If you have any questions, comments, or suggestions for us, just fill out the form below and we will get back to you!</h3>
+    <h2>Contact Us</h2>
+    <p>If you have any questions, comments, or suggestions for us, just <a href="mailto:webmaster.ficforest@gmail.com?Subject=Hello">send us an email</a> and we will get back to you!</p>
     <br/>
-    <form name="frmContactUs" method="post">
-    <table name="tblContactUs" id="tblContactUs" BORDER="0" cellpadding="0" cellspacing="10" WIDTH="1000">
-      <tr>
-        <td width="100"></td>
-        <td width="125"><label> Your name: </label></td>
-        <td><input type="text" name="Name" size="30"/><br/></td></tr>
-      <tr>
-        <td width="100"></td>
-        <td width="125"><label> Your E-mail: </label></td>
-        <td><input type="text" name="Email" size="30"/><br/></td></tr>
-      <tr>
-        <td width="100"></td>
-        <td width="125"><label> Message: </label></td>
-        <td><textarea type="text" name="Message" cols="80" rows="25"></textarea><br/></td></tr>
-      <tr>
-        <td width="100"></td>
-        <td><input type="submit" value="Send!" /></td></tr>
-    </table>
-    </form>
   </div>
   <div id="TOU_content">
     <?php include("termsofuse.php"); ?> 
