@@ -120,7 +120,7 @@ include ("var.php");
   <div id="plantseed_content">
     <h2>Plant a Seed</h2>
     <div id="seedform">
-    <form action="plantseed.php" method="post">
+    <form action="plantseed.php" target="" method="post">
     <table id="tblPlantSeed" BORDER="0" cellpadding="0" cellspacing="10" WIDTH="1000">
       <tr>
         <td width="100"></td>

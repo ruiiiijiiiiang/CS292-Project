@@ -3,7 +3,11 @@
   $name = mysql_real_escape_string($_POST["Name"]);
   $author = mysql_real_escape_string($_POST["Author"]);
   $content = mysql_real_escape_string($_POST["Content"]);
- 
+
+if($name!="" and $content!=""){
+  if($author ==""){
+    $author="Anonymous";
+  }
   include("connect.php");
   $result = mysql_query("INSERT INTO forest.forest (Name) VALUES ('$name')");
   if ($result == 0) die(mysql_error());
@@ -30,5 +34,7 @@
   //insert first row into new table
   $result = mysql_query("INSERT INTO forest." . $id . " (Title, Author, Content, rNum, rTotal, pID, cNum) VALUES ('$name','$author','$content','0','0','0','0')");
   if ($result == 0) die(mysql_error());
+  
+}
 ?>
 </html>
